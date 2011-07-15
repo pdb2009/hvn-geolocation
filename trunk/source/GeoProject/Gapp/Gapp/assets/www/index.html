@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>GAPP</title>
+<link rel="stylesheet" href="jquery.mobile.min.css" />
+<link rel="stylesheet" href="gapp.css" />
+<script type="text/javascript" src="jquery.js"></script>
+<script src="http://www.google.com/jsapi?key=ABQIAAAAahcO7noe62FuOIQacCQQ7RTHkUDJMJAZieEeKAqNDtpKxMhoFxQsdtJdv3FJ1dT3WugUNJb7xD-jsQ" type="text/javascript"></script>        
+<script type="text/javascript">
+	google.load("maps", "3", {'other_params':'sensor=true'});
+	google.load("jquery", "1.5");
+</script>
+<script type="text/javascript" src="jquery.mobile.min.js"></script>
+<script type="text/javascript" src="jquery.ui.map.min.js"></script> 
+<script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+<script type="text/javascript">
+	$(function() {			
+		document.addEventListener("deviceready", onDeviceReady, false);
+	});
+	
+	function onDeviceReady() {
+					
+		$.getJSON('http://thiencong.com/gapp/index.php/api/category', function(data) {
+			
+			var catlist = $('#catlist');			
+			
+			var str = '';
+			$.each(data, function(key, val) {	
+				str += '<li><a data-identity="cat' + val.id + '" data-url="?catid=' + val.id + '" href="javascript:void(0);"><img src="http://thiencong.com/gapp/images/categoy/' + val.icon + '" /><h3>' + val.title + '</h3><p>' + val.description + '</p></a><a href="#">' + val.title + '</a></li>';												
+			});
+							
+			catlist.html(str);
+			catlist.listview("refresh");
+
+		});			
+		
+		
+	    $('#catlist a').live("click", function() {  
+	    	var dataurl = $(this).attr("data-url");  
+	        if (dataurl != null)  
+	            $.mobile.changePage("category.html" + dataurl);  
+	    });  
+	    
+	  	//attach event to all pages having "cat" parameter in data-url  
+		$('#category').live("pageshow", function() {  
+			var catid = getParameterByName("catid", $(this).data("url"));  
+		    
+		    if (catid == null) 
+		    	return;             
+	       
+	        
+	        $.getJSON('http://thiencong.com/gapp/index.php/api/category/' + catid, function(data) {
+	        	$('#category h1').text(data.title);
+	        });
+	        
+	        
+	        $.getJSON('http://thiencong.com/gapp/index.php/api/item/category/' + catid, function(data) {	        	
+	        	var placelist = $('#placelist');				
+				
+				var str = '';
+				$.each(data, function(key, val) {	
+					str += '<li>';
+					str += '<a data-identity="place' + val.id + '" data-url="?placeid=' + val.id + '" href="javascript:void(0);">';
+					str += '<h3>'+ val.title +'</h3>';
+					str += '<p>' + val.description + '</p>';
+					str += '<p>' + val.address + ', ' + val.city + ', ' + val.country + '</p>';					
+					str += '</a></li>';													
+				});
+								
+				placelist.html(str);
+				placelist.listview("refresh");
+					
+			});
+	      
+	    });  
+	  
+	  
+		$('#placelist a').live("click", function() {  
+	    	var dataurl = $(this).attr("data-url");  
+	        if (dataurl != null)  
+	            $.mobile.changePage("place.html" + dataurl);  
+	    });  
+		
+		$('#place').live("pageshow", function() {  
+			var placeid = getParameterByName("placeid", $(this).data("url"));  
+		    
+		    if (placeid == null) 
+		    	return;             
+	       
+	        
+	        $.getJSON('http://thiencong.com/gapp/index.php/api/item/' + placeid, function(data) {
+	        	$('#place h1').text(data.title);	        	
+	        	
+	        });    
+	        
+	        $('#map_canvas').gmap( { 'center': getLatLng(), 'callback': 
+				function (map) {
+					if ( navigator.geolocation ) {
+						watch = navigator.geolocation.watchPosition ( 
+							function( position ) { 
+								$('#map_canvas').gmap('clearMarkers');
+								$('#map_canvas').gmap('addMarker', { 'title': 'You are here!', 'bound': true, 'position':new google.maps.LatLng(position.coords.latitude, position.coords.longitude) }, function(map, marker) {
+									$('#map_canvas').gmap('addInfoWindow', { 'position': marker.getPosition(), 'content': 'You are here!' }, function(iw) {
+										$(marker).click(function() {
+											iw.open(map, marker);
+										});
+									});
+									map.panTo( marker.getPosition() );
+								});
+							}
+						);
+					}
+				}
+			}); 
+	        
+	        		
+			function getLatLng() {
+				if ( google.loader.ClientLocation != null ) {
+					return new google.maps.LatLng(google.loader.ClientLocation.latitude, google.loader.ClientLocation.longitude);	
+				}
+				return new google.maps.LatLng(59.3426606750, 18.0736160278);
+			}
+	      
+	    });  
+		
+		$('#place').live("pagehide", function() {
+			if ( navigator.geolocation ) {
+				navigator.geolocation.clearWatch(watch);
+            }
+		});
+		
+		$('#place').live("pagecreate", function() {
+			var watch;
+		});
+		
+		$('#share').live("pageshow", function() {
+			$.getJSON('http://thiencong.com/gapp/index.php/api/category', function(data) {
+				
+				var cat_id = $('#cat_id');				
+				
+				var str = '';
+				$.each(data, function(key, val) {	
+					str += '<option value="' + val.id + '">' + val.title + '</option>';												
+				});
+								
+				cat_id.html(str);				
+
+			});			
+		});
+	}
+	
+    function getParameterByName(name, inputstring) {  
+        var ips;  
+        if (inputstring.length == 0)  
+            ips = window.location;  
+        else  
+            ips = inputstring;  
+        var match = RegExp('[?&]' + name + '=([^&]*)').exec(ips);  
+        return match && decodeURIComponent(match[1].replace(/\+/g, ' '));  
+       
+    }  
+    
+</script>
+</head>
+<body>
+
+	<div data-role="page" id="categories" data-theme="b" data-add-back-btn="true">
+
+		<div data-role="header">
+			<h1>GAPP</h1>
+		</div>
+		<!-- /header -->
+
+		<div data-role="content">			
+			<ul data-role="listview" id="catlist"></ul>		
+		</div>
+		<!-- /content -->		
+	</div>
+	<!-- /page -->
+	
+</body>
+</html>
