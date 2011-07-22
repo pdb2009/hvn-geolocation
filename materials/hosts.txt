@@ -1,0 +1,125 @@
+# Copyright (c) 1993-1999 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+127.0.0.1       localhost
+192.168.177.14 hwiki
+
+#Hearst services
+#Alpha
+172.20.68.30 	services.hearstmags.com 
+#Beta
+#164.109.49.228	services.hearstmags.com
+
+# alpha hosts
+172.20.68.30	alphapreview.seventeen.com
+172.20.68.30	alphapreview.cosmogirl.com
+172.20.68.30	alphapreview.cosmopolitan.com
+172.20.68.30	alphapreview.countryliving.com
+172.20.68.30	alphapreview.delish.com
+172.20.68.30	alphapreview.esquire.com
+172.20.68.30	alphapreview.goodhousekeeping.com
+172.20.68.30	alphapreview.harpersbazaar.com
+172.20.68.30	alphapreview.housebeautiful.com
+172.20.68.30	alphapreview.marieclaire.com
+172.20.68.30	alphapreview.misquincemag.com
+172.20.68.30	alphapreview.realage.com
+172.20.68.30	alphapreview.quickandsimple.com
+172.20.68.30	alphapreview.redbookmag.com
+172.20.68.30	alphapreview.teenmag.com
+172.20.68.30	alphapreview.thedailygreen.com
+172.20.68.30	alphapreview.townandcountrymag.com
+172.20.68.30	alphapreview.townandcountrytravelmag.com
+172.20.68.30	alphapreview.veranda.com
+172.20.68.30 	alphapreview.realbeauty.com
+172.20.68.30 	alphapreview.popularmechanics.com
+172.20.68.30 	alphapreview.dogage.com
+172.20.68.30	alphapreview.thesurvivorsclub.org
+
+# beta hosts
+164.109.51.219	betapreview.seventeen.com #new IP betapreview
+164.109.51.219	betapreview.cosmogirl.com
+164.109.51.219	betapreview.cosmopolitan.com
+164.109.51.219	betapreview.countryliving.com
+164.109.51.219	betapreview.delish.com
+164.109.51.219	betapreview.esquire.com
+164.109.51.219	betapreview.goodhousekeeping.com
+164.109.51.219	betapreview.harpersbazaar.com
+164.109.51.219	betapreview.housebeautiful.com
+164.109.51.219	betapreview.marieclaire.com
+164.109.51.219	betapreview.misquincemag.com
+164.109.51.219	betapreview.realage.com
+164.109.51.219	betapreview.quickandsimple.com
+164.109.51.219	betapreview.redbookmag.com
+164.109.51.219	betapreview.teenmag.com
+164.109.51.219	betapreview.thedailygreen.com
+164.109.51.219	betapreview.townandcountrymag.com
+164.109.51.219	betapreview.townandcountrytravelmag.com
+164.109.51.219	betapreview.veranda.com
+164.109.51.219 	betapreview.realbeauty.com
+164.109.51.219 	betapreview.popularmechanics.com
+164.109.51.219	betapreview.thesurvivorsclub.org
+
+#preview hosts
+164.109.51.21 preview.realbeauty.com
+164.109.51.21 preview.popularmechanics.com
+
+#live hosts
+#164.109.51.16  	www.realbeauty.com 
+#164.109.51.16 www.thesurvivorsclub.org
+
+#msn canada
+172.20.68.30 alphapreview.ca.delish.com
+164.109.51.219 betapreview.ca.delish.com
+ 
+#chron.delish
+172.20.68.30 alphapreview.chron.delish.com
+164.109.51.219 betapreview.chron.delish.com
+
+#UK sites:
+172.20.68.30 alphapreview.menshealth.co.uk 
+172.20.68.30 alphapreview.youandyourwedding.co.uk 
+172.20.68.30 alphapreview.esquire.co.uk 
+172.20.68.30 alphapreview.handbag.com 
+172.20.68.30 alphapreview.cosmopolitan.co.uk 
+172.20.68.30 alphapreview.company.co.uk 
+172.20.68.30 alphapreview.harpersbazaar.co.uk 
+172.20.68.30 alphapreview.babyexpert.com 
+172.20.68.30 alphapreview.allaboutyou.com
+172.20.68.30 alphapreview.handbag.com  
+
+164.109.51.219 betapreview.menshealth.co.uk 
+164.109.51.219 betapreview.youandyourwedding.co.uk 
+#164.109.51.219 betapreview.esquire.co.uk 
+164.109.51.219 betapreview.handbag.com 
+#164.109.51.219 betapreview.cosmopolitan.co.uk 
+164.109.51.219 betapreview.company.co.uk 
+#164.109.51.219 betapreview.harpersbazaar.co.uk 
+#164.109.51.219 betapreview.babyexpert.com 
+#164.109.51.219 betapreview.allaboutyou.com 
+
+164.109.51.21 preview.company.co.uk
+
+164.109.51.16 www.menshealth.co.uk 
+#164.109.51.16 www.youandyourwedding.co.uk #live already
+#164.109.51.16 www.esquire.co.uk 
+164.109.51.16 www.handbag.com 
+#164.109.51.16 www.cosmopolitan.co.uk 
+#164.109.51.16 www.company.co.uk 
+#164.109.51.16 www.harpersbazaar.co.uk 
+#164.109.51.16 www.babyexpert.com 
+#164.109.51.16 www.allaboutyou.com
