@@ -21,13 +21,13 @@
 	
 	function onDeviceReady() {
 					
-		$.getJSON('http://mantdm.freevnn.com/index.php/api/category', function(data) {
+		$.getJSON('http://thiencong.com/gapp/index.php/api/category', function(data) {
 			
 			var catlist = $('#catlist');			
 			
 			var str = '';
 			$.each(data, function(key, val) {	
-				str += '<li><a data-identity="cat' + val.id + '" data-url="?catid=' + val.id + '" href="javascript:void(0);"><img src="http://mantdm.freevnn.com/images/categoy/' + val.icon + '" /><h3>' + val.title + '</h3><p>' + val.description + '</p></a><a href="#">' + val.title + '</a></li>';												
+				str += '<li><a data-identity="cat' + val.id + '" data-url="?catid=' + val.id + '" href="javascript:void(0);"><img src="http://thiencong.com/gapp/images/categoy/' + val.icon + '" /><h3>' + val.title + '</h3><p>' + val.description + '</p></a><a href="#">' + val.title + '</a></li>';												
 			});
 							
 			catlist.html(str);
@@ -50,12 +50,12 @@
 		    	return;             
 	       
 	        
-	        $.getJSON('http://mantdm.freevnn.com/index.php/api/category/' + catid, function(data) {
+	        $.getJSON('http://thiencong.com/gapp/index.php/api/category/' + catid, function(data) {
 	        	$('#category h1').text(data.title);
 	        });
 	        
 	        
-	        $.getJSON('http://mantdm.freevnn.com/index.php/api/item/category/' + catid, function(data) {	        	
+	        $.getJSON('http://thiencong.com/gapp/index.php/api/item/category/' + catid, function(data) {	        	
 	        	var placelist = $('#placelist');				
 				
 				var str = '';
@@ -89,7 +89,7 @@
 		    	return;             
 	       
 	        
-	        $.getJSON('http://mantdm.freevnn.com/index.php/api/item/' + placeid, function(data) {
+	        $.getJSON('http://thiencong.com/gapp/index.php/api/item/' + placeid, function(data) {
 	        	$('#place h1').text(data.title);	        	
 	        	
 	        });    
@@ -135,7 +135,7 @@
 		});
 		
 		$('#share').live("pageshow", function() {
-			$.getJSON('http://mantdm.freevnn.com/index.php/api/category', function(data) {
+			$.getJSON('http://thiencong.com/gapp/index.php/api/category', function(data) {
 				
 				var cat_id = $('#cat_id');				
 				
