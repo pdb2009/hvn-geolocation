@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>PhoneGap</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1" />
 		<link rel="stylesheet" href="css/jquery.mobile-1.0b1.min.css" />
 		<link rel="stylesheet" href="css/styles.css" />
 		
@@ -12,8 +13,8 @@
 	</head>
 	<body>
 		<!-- begin first page -->
-		<section id="page1" data-role="page">
-			<header data-role="header"><h1>jQuery Mobile</h1></header>
+		<section id="page1" data-role="page" data-theme="b">
+			<header data-role="header" data-position="fixed"><h1>jQuery Mobile</h1></header>
 			<div data-role="content" class="content">
 				<p>First page!</p>
 				<p><a href="#page2" data-transition="slide">Flip to Page 2</a></p>
@@ -63,6 +64,7 @@
 					</li>
 				</ul>
 			</div>
+			<footer data-role="footer" data-position="fixed"><h1>jQuery Mobile</h1></footer>
 		</section>
 		<!-- end first page -->
 		<!-- Begin second page -->
@@ -95,7 +97,7 @@
 				<p><a href="#page1" data-transition="slide">Flip to Page 1</a></p>
 				<p><a href="#page2" data-transition="slide">Flip to Page 2</a></p>
 				<h3>Unordered List</h3>
-				<ul data-role="listview">
+				<ul data-role="listview" data-inset="true">
 					<li data-role="divider">Things</li>
 					<li><a href="#">Item</a></li>
 					<li><a href="#">Item</a></li>
@@ -111,7 +113,7 @@
 					<li><a href="#">Item</a></li>
 				</ul>
 				<h3>Ordered List</h3>
-				<ol data-role="listview">
+				<ol data-role="listview" data-inset="true">
 					<li data-role="divider">Group</li>
 					<li><a href="#">Item</a></li>
 					<li><a href="#">Item</a></li>
