@@ -90,10 +90,9 @@
 		</section>
 		<!-- end second page -->
 		<!-- Begin third page -->
-		<section id="page3" data-role="page">
-			<header data-role="header"><h1>jQuery Mobile</h1></header>
-			
-			<div data-role="content" class="content">
+		<section id="page3" data-role="page" data-theme="b">
+			<header data-role="header" data-position="fixed"><h1>jQuery Mobile</h1></header>
+			<div data-role="content" class="content" data-scroll="true">
 				<p>Third page!</p>
 				<p><a href="#page1" data-transition="slide">Flip to Page 1</a></p>
 				<p><a href="#page2" data-transition="slide">Flip to Page 2</a></p>
@@ -130,6 +129,12 @@
 					<li><a href="#">Item</a></li>
 				</ol>
 			</div>
+			<footer data-role="footer" class="ui-bar" data-position="fixed">
+				<a href="index.html" data-role="button" data-theme="a" data-icon="delete">Remove</a>
+				<a href="index.html" data-role="button" data-theme="c" data-icon="plus">Add</a>
+				<a href="index.html" data-role="button" data-theme="d" data-icon="arrow-u">Up</a>
+				<a href="index.html" data-role="button" data-theme="e" data-icon="arrow-d">Down</a>
+			</footer>
 		</section>
 		<!-- end second page -->
 	</body>
