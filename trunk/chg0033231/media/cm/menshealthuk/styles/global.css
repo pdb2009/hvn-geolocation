@@ -1,0 +1,40 @@
+
+/*Module Count Down*/
+#logoLink { display: block; width: 74px; height: 38px; position: absolute; left: 225px; top: 75px; }
+#mainLink { display: block; width: 300px; height: 127px; position: absolute; cursor: pointer; }
+.cnt_days { position: absolute; top: 80px; left: 6px; width: 48px; height: 52px; }
+.cnt_hours { position: absolute; top: 80px; left: 60px; width: 48px; height: 52px; }
+.cnt_mins { position: absolute; top: 80px; left: 116px; width: 48px; height: 52px; }
+.cnt_secs { position: absolute; top: 80px; left: 171px; width: 48px; height: 52px; }
+.slideshow { width: 300px; height: 127px; background-color: #000000; overflow: hidden;}
+#red { width: 300px; height: 127px; background-image: url(../site_images/countDown/v4_0000_nottingham_bg.jpg); background-repeat: no-repeat;}
+#green { width: 300px; height: 127px; background-image: url(../site_images/countDown/v4_0001_cardiff_bg.jpg); background-repeat: no-repeat; display: none; }
+#blue { width: 300px; height: 127px; background-image: url(../site_images/countDown/v4_0003_Edinburgh_bg.jpg); background-repeat: no-repeat; display: none; }
+#black { width: 300px; height: 127px; background-image: url(../site_images/countDown/v4_0002_london_bg.jpg); background-repeat: no-repeat; display: none; }
+#end { width: 300px; height: 127px; background-image: url(../site_images/countDown/v4_0004_end.jpg); background-repeat: no-repeat; display: none; }
+/*.slideshow span{background:url(../site_images/countDown/numbers.png) no-repeat;float:left;width:20px;height:30px;display:block;}
+.slideshow .hasCountdown{position:absolute; top:75px; left: 9px;}
+.slideshow .image0{background-position: 0 -112px; }
+.slideshow .image1{background-position: -22px -112px; }
+.slideshow .image2{background-position: -44px -112px;}
+.slideshow .image3{background-position: -66px -112px;}
+.slideshow .image4{background-position: -88px -112px;}
+.slideshow .image5{background-position: -110px -112px;}
+.slideshow .image6{background-position: -132px -112px;}
+.slideshow .image7{background-position: -154px -112px;}
+.slideshow .image8{background-position: -176px -112px;}
+.slideshow .image9{background-position: -198px -112px;}
+.slideshow .imageSpace{width: 15px;background:none;}*/
+.slideshow span{background:url(../site_images/countDown/numbersSmall.png) no-repeat;float:left;width:18px;height:23px;display:block;}
+.slideshow .hasCountdown{position:absolute; top:78px; left: 11px;}
+.slideshow .image0{background-position: 0 -92px; }
+.slideshow .image1{background-position: -18px -92px; }
+.slideshow .image2{background-position: -36px -92px;}
+.slideshow .image3{background-position: -54px -92px;}
+.slideshow .image4{background-position: -72px -92px;}
+.slideshow .image5{background-position: -90px -92px;}
+.slideshow .image6{background-position: -108px -92px;}
+.slideshow .image7{background-position: -126px -92px;}
+.slideshow .image8{background-position: -144px -92px;}
+.slideshow .image9{background-position: -162px -92px;}
+.slideshow .imageSpace{width: 19px;background:none;}
