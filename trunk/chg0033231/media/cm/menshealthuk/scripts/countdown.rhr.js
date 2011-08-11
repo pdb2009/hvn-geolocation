@@ -59,7 +59,7 @@
             $("#counterNottingham").countdown({date:"October 8, 2011 10:00:00", onComplete:removeSlide});
             $("#counterEdinburgh").countdown({date:"October 16, 2011 10:00:00", onComplete:removeSlide});
             $("#counterLondon").countdown({date:"November 12, 2011 10:00:00", onComplete:removeSlide});*/
-            $('#counterCardiff').countdown({until:$.countdown.UTCDate(-3, 2011,  10 - 1, 2, 10, 0, 0), format: 'DHMS', layout: 
+            $('#counterCardiff').countdown({until:new Date(2011,  10 - 1, 2, 10, 0, 0), format: 'DHMS', layout: 
 				'<span class="image{d10}"></span><span class="image{d1}"></span>' + 
 				'<span class="imageSpace"></span>' + 
 				'<span class="image{h10}"></span><span class="image{h1}"></span>' + 
@@ -68,7 +68,7 @@
 				'<span class="imageSpace"></span>' + 
 				'<span class="image{s10}"></span><span class="image{s1}"></span>'
 			});
-			$('#counterNottingham').countdown({until:$.countdown.UTCDate(-3, 2011,  10 - 1, 8, 10, 0, 0), format: 'DHMS', layout: 
+			$('#counterNottingham').countdown({until:new Date(2011,  10 - 1, 8, 10, 0, 0), format: 'DHMS', layout: 
 				'<span class="image{d10}"></span><span class="image{d1}"></span>' + 
 				'<span class="imageSpace"></span>' + 
 				'<span class="image{h10}"></span><span class="image{h1}"></span>' + 
@@ -77,7 +77,7 @@
 				'<span class="imageSpace"></span>' + 
 				'<span class="image{s10}"></span><span class="image{s1}"></span>'
 			});
-			$('#counterEdinburgh').countdown({until:$.countdown.UTCDate(-3, 2011,  10 - 1, 16, 10, 0, 0), format: 'DHMS', layout: 
+			$('#counterEdinburgh').countdown({until:new Date(2011,  10 - 1, 16, 10, 0, 0), format: 'DHMS', layout: 
 				'<span class="image{d10}"></span><span class="image{d1}"></span>' + 
 				'<span class="imageSpace"></span>' + 
 				'<span class="image{h10}"></span><span class="image{h1}"></span>' + 
@@ -86,7 +86,7 @@
 				'<span class="imageSpace"></span>' + 
 				'<span class="image{s10}"></span><span class="image{s1}"></span>'
 			});
-			$('#counterLondon').countdown({until:$.countdown.UTCDate(-3, 2011,  11 - 1, 12, 10, 0, 0), format: 'DHMS', layout: 
+			$('#counterLondon').countdown({until:new Date(2011,  11 - 1, 12, 10, 0, 0), format: 'DHMS', layout: 
 				'<span class="image{d10}"></span><span class="image{d1}"></span>' + 
 				'<span class="imageSpace"></span>' + 
 				'<span class="image{h10}"></span><span class="image{h1}"></span>' + 
